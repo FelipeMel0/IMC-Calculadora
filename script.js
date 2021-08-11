@@ -7,18 +7,25 @@ const botaoCalcular = document.getElementById("botaoCalcular")
 
 function calcularImc(){
     const imc = parseFloat(peso.value) / (parseFloat(altura.value) ** 2)
-    resultado.textContent = imc
-}
 
+    if(imc < 18.5){
+        resultado.textContent = "O resultado do IMC de " + nome.value + " deu: " + imc.toFixed(2) + ". Você está abaixo do peso!"
+    }
+    else if(imc >= 18.5 && imc <= 24.9){
+        resultado.textContent = "O resultado do IMC de " + nome.value + " deu: " + imc.toFixed(2) + ". Você está no peso ideal!"
+    }
+    else if(imc >= 25 && imc <= 29.9){
+        resultado.textContent = "O resultado do IMC de " + nome.value + " deu: " + imc.toFixed(2) + ". Você está acima do peso!"
+    }
+    else if(imc >= 30 && imc <= 34.9){
+        resultado.textContent = "O resultado do IMC de " + nome.value + " deu: " + imc.toFixed(2) + ". Você está com Obesidade grau I"
+    }
+    else if(imc >= 35 && imc <= 39.9){
+        resultado.textContent = "O resultado do IMC de " + nome.value + " deu: " + imc.toFixed(2) + ". Você está com Obesidade grau II"
+    }
+    else{
+        resultado.textContent = "O resultado do IMC de " + nome.value + " deu: " + imc.toFixed(2) + ". Você está com Obesidade grau III"
+    }
+}
+ 
 botaoCalcular.addEventListener("click", calcularImc)
-// function calcular(){
-//     if(peso.value !== '' && altura.value !== ''){
-//     resultado.value = parseFloat(peso.value) / parseFloat(altura.value * altura.value)
-//     formulario.classList.add("botaoCalcular")
-//     // createMessage("Peso normal", "sucess")
-//     }
-//     else{
-//         alert("Preencha os campos corretamente!")
-//     }
-// }
-// botaoCalcular.addEventListener("click", calcular)

@@ -8,7 +8,7 @@
     --cor-destaque: #fcc91c;
 }
 
-body {
+body { 
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -125,6 +125,7 @@ section {
     background-color: var(--cor-destaque);
     border-radius: 5px;
     padding: 10px;
+    max-width: 350px;
 }
 
 footer {
