@@ -118,6 +118,11 @@ section {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: linear 0.2s;
+}
+
+.calculadora button:hover {
+    background-color: #fcc81ccc;
 }
 
 .calculadora #resultado {
