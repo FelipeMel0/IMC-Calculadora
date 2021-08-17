@@ -6,6 +6,9 @@ const formulario = document.getElementById("formulario")
 const botaoCalcular = document.getElementById("botaoCalcular")
 
 function calcularImc(){
+
+    if(nome.value !== '' && peso.value !== '' && altura.value !== ''){
+
     const imc = parseFloat(peso.value) / (parseFloat(altura.value) ** 2)
 
     if(imc < 18.5){
@@ -25,6 +28,11 @@ function calcularImc(){
     }
     else{
         resultado.textContent = "O resultado do IMC de " + nome.value + " deu: " + imc.toFixed(2) + ". Você está com Obesidade grau III"
+    }
+}
+
+    else{
+        resultado.textContent = "Preencha todos os campos corretamente!"
     }
 }
  
